@@ -17,8 +17,8 @@ function Banner() {
     }, []);
 
     console.log(movie);
-    function truncate(str,n){
-        return str?.length > n ? str.substring(0,n-1) + "..." : str;
+    function truncate(str, n) {
+        return str?.length > n ? str.substring(0, n - 1) + "..." : str;
     }
     return (
         <header style={{
@@ -28,14 +28,17 @@ function Banner() {
         }} className="banner">
             <div className="banner__contents">
                 <h1 className="banner__title">
-                    {movie?.title ||movie?.name ||movie?.original_name}
+                    {movie?.title || movie?.name || movie?.original_name}
                 </h1>
                 <div className="banner__buttons">
                     <button className="banner__button">Play</button><button className="banner__button">My List</button>
                 </div>
                 <div className="banner__description">
-                        {truncate(movie?.overview , 150)}
+                    {truncate(movie?.overview, 150)}
                 </div>
+            </div>
+            <div className="banner--fadeBottom">
+
             </div>
         </header>
     )
